@@ -1,0 +1,139 @@
+<!DOCTYPE html> <!-- 声明文档类型为HTML -->
+<html lang="zh"> <!-- 设置文档的语言为中文 -->
+
+<head> <!-- 文档头部开始 -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 为移动设备设置视口 -->
+    <title>登录 & 注册</title> <!-- 网页标题 -->
+
+    <style> <!-- 内联CSS样式开始 -->
+        body { /* 为整个页面设置样式 */
+            font-family: Arial, sans-serif; /* 字体设置 */
+            display: flex; /* 使用Flexbox布局 */
+            justify-content: center; /* 水平居中内容 */
+            align-items: center; /* 垂直居中内容 */
+            height: 100vh; /* 设置高度为视口的100% */
+            background-color: #f5f5f5; /* 背景色设置 */
+        }
+
+        .container { /* 容器样式 */
+            background-color: #fff; /* 背景色为白色 */
+            padding: 20px; /* 内边距为20px */
+            border-radius: 5px; /* 边框圆角为5px */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影 */
+        }
+
+        .container h2 { /* 容器内的h2标题样式 */
+            text-align: center; /* 文字居中 */
+            margin-bottom: 20px; /* 下边距为20px */
+        }
+
+        input { /* 输入框样式 */
+            width: 100%; /* 宽度为100% */
+            padding: 10px; /* 内边距为10px */
+            margin-bottom: 10px; /* 下边距为10px */
+            border: 1px solid #ccc; /* 边框设置 */
+            border-radius: 3px; /* 边框圆角为3px */
+        }
+
+        button { /* 按钮样式 */
+            width: 100%; /* 宽度为100% */
+            padding: 10px; /* 内边距为10px */
+            background-color: #007BFF; /* 背景色 */
+            border: none; /* 无边框 */
+            border-radius: 3px; /* 边框圆角为3px */
+            color: #fff; /* 文字颜色为白色 */
+            cursor: pointer; /* 鼠标悬浮时显示手形 */
+        }
+
+        button:hover { /* 按钮鼠标悬浮状态样式 */
+            background-color: #0056b3; /* 背景色变深 */
+        }
+
+        .switch-mode { /* 切换模式部分的样式 */
+            text-align: center; /* 文字居中 */
+            margin-top: 10px; /* 上边距为10px */
+        }
+
+        .switch-mode a { /* 切换模式部分的链接样式 */
+            color: #007BFF; /* 链接颜色 */
+            text-decoration: none; /* 无下划线 */
+        }
+
+        .switch-mode a:hover { /* 切换模式部分的链接鼠标悬浮状态样式 */
+            text-decoration: underline; /* 添加下划线 */
+        }
+    </style> <!-- 内联CSS样式结束 -->
+</head> <!-- 文档头部结束 -->
+
+<body> <!-- 页面主体开始 -->
+
+<div class="container" id="login-container"> <!-- 登录容器开始 -->
+    <h2>登录</h2> <!-- 标题 -->
+    <form action="your_login_server_endpoint_here" method="post"> <!-- 登录表单开始 -->
+        <input type="text" name="username" placeholder="用户名" required> <!-- 用户名输入框 -->
+        <input type="password" name="password" placeholder="密码" required> <!-- 密码输入框 -->
+        <button type="submit">登录</button> <!-- 登录按钮 -->
+    </form> <!-- 登录表单结束 -->
+    <div class="switch-mode"> <!-- 切换模式链接开始 -->
+        <a href="#" id="show-register">注册账户</a> | <a href="#" id="show-retrieve">找回密码</a> <!-- 注册和找回密码链接 -->
+    </div> <!-- 切换模式链接结束 -->
+</div> <!-- 登录容器结束 -->
+
+<div class="container" id="register-container" style="display:none;"> <!-- 注册容器开始（默认隐藏） -->
+    <h2>注册</h2> <!-- 标题 -->
+    <form action="your_register_server_endpoint_here" method="post"> <!-- 注册表单开始 -->
+        <input type="text" name="username" placeholder="用户名" required> <!-- 用户名输入框 -->
+        <input type="password" name="password" placeholder="密码" required> <!-- 密码输入框 -->
+        <input type="password" name="confirm-password" placeholder="确认密码" required> <!-- 确认密码输入框 -->
+        <button type="submit">注册</button> <!-- 注册按钮 -->
+    </form> <!-- 注册表单结束 -->
+    <div class="switch-mode"> <!-- 切换模式链接开始 -->
+        <a href="#" id="show-login">返回登录</a> <!-- 返回登录链接 -->
+    </div> <!-- 切换模式链接结束 -->
+</div> <!-- 注册容器结束 -->
+
+<div class="container" id="retrieve-container" style="display:none;"> <!-- 找回密码容器开始（默认隐藏） -->
+    <h2>找回密码</h2> <!-- 标题 -->
+    <form action="your_retrieve_server_endpoint_here" method="post"> <!-- 找回密码表单开始 -->
+        <input type="email" name="email" placeholder="注册时使用的邮箱" required> <!-- 邮箱输入框 -->
+        <button type="submit">发送重置链接</button> <!-- 发送链接按钮 -->
+    </form> <!-- 找回密码表单结束 -->
+    <div class="switch-mode"> <!-- 切换模式链接开始 -->
+        <a href="#" id="show-login-retrieve">返回登录</a> <!-- 返回登录链接 -->
+    </div> <!-- 切换模式链接结束 -->
+</div> <!-- 找回密码容器结束 -->
+
+<script> <!-- JavaScript开始 -->
+    // 添加点击事件，显示注册容器，隐藏登录容器
+    document.getElementById('show-register').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('register-container').style.display = 'block';
+    });
+
+    // 添加点击事件，显示登录容器，隐藏注册容器
+    document.getElementById('show-login').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('register-container').style.display = 'none';
+    });
+
+    // 添加点击事件，显示找回密码容器，隐藏登录容器
+    document.getElementById('show-retrieve').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('retrieve-container').style.display = 'block';
+    });
+
+    // 添加点击事件，显示登录容器，隐藏找回密码容器
+    document.getElementById('show-login-retrieve').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('retrieve-container').style.display = 'none';
+    });
+</script> <!-- JavaScript结束 -->
+
+</body> <!-- 页面主体结束 -->
+
+</html> <!-- HTML文档结束 -->

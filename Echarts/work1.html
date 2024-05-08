@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>邮电业务总量统计</title>
+    <script src="https://cdn.staticfile.net/echarts/4.3.0/echarts.min.js"></script>
+</head>
+    <div id="main" style="width: 1200px;height:50vh;"></div>
+    <div id="other" style="width: 1200px;height:50vh;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        var otherChart = echarts.init(document.getElementById('other'));
+        var option = {
+            title: {
+                text: '电信业务总量（当期值）'
+            },
+            tooltip: {},
+            legend: {
+                data:['当期值（亿元）']
+            },
+            xAxis: {
+                data: ["2023年3月","2023年4月","2023年5月","2023年6月","2023年7月","2023年8月","2023年9月","2023年10月","2023年11月","2023年12月","2024年2月"]
+            },
+            yAxis: {},
+            series: [{
+                name: '当期值（亿元）',
+                type: 'bar',
+                data: [1544.2, 1464.6, 1512.9, 1576.1, 1499.1, 1501.8, 1579.6, 1576.8, 1638.9, 1644.1, 1394.3]
+            }]
+        };
+
+        var otheroption = {
+            title: {
+                text: '电信业务总量（累计值）'
+            },
+            tooltip: {},
+            legend: {
+                data:['累计值（亿元）']
+            },
+            xAxis: {
+                data: ["2023年3月","2023年4月","2023年5月","2023年6月","2023年7月","2023年8月","2023年9月","2023年10月","2023年11月","2023年12月","2024年2月"]
+            },
+            yAxis: {},
+            series: [{
+                name: '累计值（亿元）',
+                type: 'line',
+                data: [4333, 5797.7, 7310.6, 8886.7, 10385.5, 11887.5, 13467.1, 15043.8, 16682.7, 18326.8, 2913.1]
+            }]
+        };
+ 
+        myChart.setOption(option);
+        otherChart.setOption(otheroption);
+    </script>
+</body>
+</html>

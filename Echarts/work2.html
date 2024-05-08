@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2024年三月各类消费价格指数</title>
+    <!-- 引入 ECharts -->
+    <script src="https://cdn.staticfile.net/echarts/4.3.0/echarts.min.js"></script>
+    <style>
+        body,html {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 图表容器 -->
+    <div id="main" style="width: 70vw;height:90vh;"></div>
+    <script type="text/javascript">
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 图表配置项
+        var option = {
+            title : {
+                text: '2024年三月各类消费价格指数',  // 主标题文本
+                x:'center'  // 标题居中
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"  // 提示框格式
+            },
+            legend: {
+                x : 'center',
+                y : 'bottom',
+                data:['居民消费价格指数','食品烟酒类居民消费价格指数','衣着类居民消费价格指数','居住类居民消费价格指数','居民消费价格指数','食品烟酒类居民消费价格指数','衣着类居民消费价格指数','居住类居民消费价格指数']  // 图例数据
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            series : [{
+                name:'半径模式',
+                type:'pie',
+                roseType : 'radius',
+                data:[
+                    {value:10, name:'居民消费价格指数(上年同月=100)'},
+                    {value:20, name:'食品烟酒类居民消费价格指数(上年同月=100)'},
+                    {value:15, name:'衣着类居民消费价格指数(上年同月=100)'},
+                    {value:25, name:'居住类居民消费价格指数(上年同月=100)'},
+                    {value:20, name:'居民消费价格指数(上年同月=100)'},
+                    {value:35, name:'食品烟酒类居民消费价格指数(上年同月=100)'},
+                    {value:30, name:'衣着类居民消费价格指数(上年同月=100)'},
+                    {value:40, name:'居住类居民消费价格指数(上年同月=100)'}
+                ]
+            }]
+        };
+
+        // 应用配置项
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

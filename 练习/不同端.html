@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-size: 40px;
+        color: black;
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 50px;
+        font-weight: bold;
+        animation: name 3s linear 0s infinite;
+    }
+
+    @keyframes name {
+        0%{
+            color: red;
+        }
+
+        50%{
+            color: pink;
+        }
+
+        100%{
+            color: blue;
+        }
+    }
+
+    @media (max-width: 768px){
+        span{
+            color: blue;
+            display: none;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 992px){
+        span{
+            color: yellow;
+        }
+        
+    }
+
+    @media (min-width: 992px){
+        span{
+            color: red;
+        }
+        
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#">你好呀</a>
+        <span>开开心心每一天</span>
+    </div>
+</body>
+</html>

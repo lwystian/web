@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            margin-left: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">表格编辑</h2>
+    <button onclick="addRow()">增加</button>
+    <table id="table">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>奖金</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>小田</td>
+            <td>20</td>
+            <td>8000</td>
+            <td>
+                <button onclick="edi(this)">编辑</button>
+                <button onclick="deleteRow(this)">删除</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById('table');
+            var length = table.rows.length;
+            var newRow = table.insertRow(length);
+            
+            var nameclo = newRow.insertCell(0);
+            var ageclo = newRow.insertCell(1);
+            var moneyclo = newRow.insertCell(2);
+            var activeclo = newRow.insertCell(3);
+
+            nameclo.innerHTML = '无'
+            ageclo.innerHTML = '无'
+            moneyclo.innerHTML = '无'
+            activeclo.innerHTML = '<button onclick="edi(this)">编辑</button><button onclick="deleteRow(this)">删除</button>'
+        }
+
+        function deleteRow(button) {
+            var row = button.parentNode.parentNode;
+            var deleterow = row.parentNode.removeChild(row);
+        }
+
+        function edi(button) {
+            var parent = button.parentNode.parentNode;
+            var name = parent.cells[0];
+            var age = parent.cells[1];
+            var money = parent.cells[2];
+            inputname = prompt("请输入要修改的姓名");
+            inputage = prompt("请输入要修改的年龄");
+            inputmoney = prompt("请输入要修改的奖金");
+            name.innerHTML = inputname
+            age.innerHTML = inputage
+            money.innerHTML = inputmoney
+        }
+    </script>
+</body>
+</html>

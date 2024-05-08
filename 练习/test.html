@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 & 注册</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(./163756299623163756299625.png);
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .switch-mode {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .switch-mode a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .switch-mode a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="login-container">
+    <h2>登录</h2>
+    <form action="your_login_server_endpoint_here" method="post">
+        <input type="text" name="username" placeholder="用户名" required>
+        <input type="password" name="password" placeholder="密码" required>
+        <button type="submit">登录</button>
+    </form>
+    <div class="switch-mode">
+        <a href="#" id="show-register">注册账户</a> | <a href="#" id="show-retrieve">找回密码</a>
+    </div>
+</div>
+
+<div class="container" id="register-container" style="display:none;">
+    <h2>注册</h2>
+    <form action="your_register_server_endpoint_here" method="post">
+        <input type="text" name="username" placeholder="用户名" required>
+        <input type="password" name="password" placeholder="密码" required>
+        <input type="password" name="confirm-password" placeholder="确认密码" required>
+        <button type="submit">注册</button>
+    </form>
+    <div class="switch-mode">
+        <a href="#" id="show-login">返回登录</a>
+    </div>
+</div>
+
+<div class="container" id="retrieve-container" style="display:none;">
+    <h2>找回密码</h2>
+    <form action="your_retrieve_server_endpoint_here" method="post">
+        <input type="email" name="email" placeholder="注册时使用的邮箱" required>
+        <button type="submit">发送重置链接</button>
+    </form>
+    <div class="switch-mode">
+        <a href="#" id="show-login-retrieve">返回登录</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById('show-register').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('register-container').style.display = 'block';
+    });
+
+    document.getElementById('show-login').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('register-container').style.display = 'none';
+    });
+
+    document.getElementById('show-retrieve').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('retrieve-container').style.display = 'block';
+    });
+
+    document.getElementById('show-login-retrieve').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('retrieve-container').style.display = 'none';
+    });
+</script>
+</body>
+</html>

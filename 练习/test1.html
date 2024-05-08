@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            background-color: #333;
+            height: 40px;
+            box-shadow: 0 1px 2px #333;
+        }
+        .drop{
+            float: left;
+
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        .drop {
+            width: 80px;
+            line-height: 40px;
+            text-align: center;
+
+        }
+        .navlist a{
+            color: white;
+            display: block;
+        }
+        .navlist a:hover{
+                background-color: #666;
+            }
+        .droplist{
+            background-color: #333;
+            box-shadow: 0 1px 2px #333;
+            display: none;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .drop:hover .droplist{
+            display: block;
+        }
+        .droplist li{
+            border-top: 1px solid #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <ul class="navlist">
+        <li class="drop"><a href="#">测试</a>
+            <ul class="droplist">
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+            </ul>
+        </li>
+        <li class="drop"><a href="#">测试</a>
+            <ul class="droplist">
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+            </ul>
+        </li>
+        <li class="drop"><a href="#">测试</a>
+            <ul class="droplist">
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+            </ul>
+        </li>
+        <li class="drop"><a href="#">测试</a>
+            <ul class="droplist">
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+            </ul>
+        </li>
+        <li class="drop"><a href="#">测试</a>
+            <ul class="droplist">
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+                <li><a href="#">菜单</a></li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head {
+            display: flex;
+            justify-content: space-between; /* 将 ul 和 #register 分别推向行首和行尾 */
+            height: 60px;
+        }
+        #head ul {
+            display: flex;
+            height: 30px;
+            padding-left: 16px;
+            list-style: none;
+        }
+        #head li {
+            margin-right: 24px;
+        }
+        #head a {
+            text-decoration: none;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+            color: #222;
+        }
+        #head a:hover{
+            color: #315efb;
+        }
+        #register {
+            display: flex;
+            align-items: center; /* 垂直居中 */
+        }
+        .set {
+            list-style: none; 
+            text-decoration: none;
+        }
+        #register button {
+            height: 24px;
+            width: 48px;
+            margin-right: 15px;
+            background-color: #4e6ef2;
+            border: none;
+            border-radius: 6px;
+            color: #fff !important;
+            font-size: px;
+        }
+        #body {
+            text-align: center;
+        }
+        #body input{
+            height: 16px;
+            width: 512px; 
+            padding: 12px 16px; 
+            border-radius: 10px 0 0 10px;
+            border-right: none; 
+            border: 2px solid #c4c7ce;
+        }
+        #body button {
+            cursor: pointer; 
+            width: 108px;
+            height: 44px;
+            line-height: 45px;
+            line-height: 44px;
+            padding: 0;
+            background: #4e6ef2;
+			margin: 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 17px;
+            color: #fff;
+            box-shadow: none;
+            font-weight: 400;
+            border: none;
+            outline: 0;
+            margin-left: -5px; /* 调整按钮与输入框之间的间距 */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="head">
+        <ul>
+            <li><a href="http://news.baidu.com" target="_blank">新闻</a></li>
+            <li><a href="https://www.hao123.com?src=from_pc" target="_blank">hao123</a></li>
+            <li><a href="http://map.baidu.com" target="_blank">地图</a></li>
+            <li><a href="http://tieba.baidu.com/" target="_blank">贴吧</a></li>
+            <li><a href="https://haokan.baidu.com/?sfrom=baidu-top" target="_blank">视频</a></li>
+            <li><a href="http://image.baidu.com/" target="_blank">图片</a></li>
+            <li><a href="https://pan.baidu.com?from=1026962h" target="_blank">网盘</a></li>
+            <li><a href="https://wenku.baidu.com/?fr=bdpcindex" target="_blank">文库</a></li>
+            <li><a href="#">更多</a></li>
+        </ul>
+        <div id="register">
+            <li class="set"><a href="#">设置</a></li>
+            <button type="submit">登录</button>
+        </div>
+    </div>
+    <div id="body">
+        <div>
+            <img src="./baidu.png" width="270" height="129">
+        </div>
+        <div>
+            <input type="text"> 
+            <button type="submit">百度一下</button>
+        </div>
+    </div>
+	<div id="news">
+		<div id="news-search">
+			<a href="">百度热搜</a>
+		</div>
+		
+</body>
+</html>

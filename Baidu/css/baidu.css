@@ -1,0 +1,282 @@
+/* 让子标签 高度和宽度为100%时充满整个屏幕 */
+html,body{
+	height: 100%;
+	width: 100%;
+	/*上下左右*/
+	margin: 0px;
+}
+
+/* 头  #head*/
+#head{
+	height: 10%;
+	/*最小高度*/
+	min-height: 60px;
+	width: 100%;
+	/*最小宽度*/
+	min-width: 1250px;
+	/*background-color: aquamarine;*/
+}
+/* #head-left */
+#head-left{
+	height: 60px;
+	width: 500px;
+	/*background-color: cadetblue;*/
+	float: left;
+	padding-left: 24px;
+}
+/* #head-left a */
+#head-left>a{
+	/*行级元素 允许设置高和宽 margin-top会生效*/
+	display: inline-block;
+	margin: 19px 31px 0px 0px;
+	/* 字体大小  行高  字体系列 */
+	font: 13px/23px Arial,sans-serif;
+	/*去除 a标签之间的空格*/
+	float: left;
+	/*去掉下划线*/
+	text-decoration: none;
+	/*字体颜色*/
+	color: #222;
+}
+/* #head-left a 伪类  鼠标悬停 */
+#head-left a:hover{
+	color: #4e6ef2;
+}
+/* #head-more */
+#head-more{
+	/*相对定位*/
+	display: inline-block;
+	position: relative;
+	margin-right: 31px;
+    margin-top: 19px;
+    padding-bottom: 19px;
+    height: 23px;
+    width: 26px;
+}
+/* head-more a */
+#head-more a{
+	/* 字体大小  行高  字体系列 */
+	font: 13px/23px Arial,sans-serif;
+	/*去除 a标签之间的空格*/
+	float: left;
+	/*去掉下划线*/
+	text-decoration: none;
+	/*字体颜色*/
+	color: #222;
+}
+/* #head-more 绝对定位 (让出空间) */
+#head-more div{
+	/*绝对定位*/
+	position: absolute;
+	top: 29px;
+    right: -12px;
+    height: 223px;
+    width: 304px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 15%);
+    border-radius: 12px;
+    display: none;
+    /* 内容水平居中 */
+    text-align: center;
+    /*优先级*/
+    z-index: 2;
+}
+/* #more-img */
+#more-img{
+	height: 210px;
+	width: 290px;
+	margin-top: 5px;
+}
+
+/* 为head-more div添加鼠标移入
+ * 	由于 head-more和悬浮div是父子标签关系,
+ * 	可以通过head-more控制悬浮div的样式
+ *  */
+#head-more:hover div{
+	/*展示*/
+	display: block;
+}
+
+/* #head-right */
+#head-right{
+	height: 60px;
+	width: 162px;
+	/*background-color: cadetblue;*/
+	float: right;
+}
+
+
+/* 身体 #body */
+#body{
+	height: 80%;
+	min-height: 462px;
+	width: 656px;
+	/*background-color: bisque;*/
+	/*水平居中*/
+	margin: 0px auto;
+	/* 内容水平居中 */
+	text-align: center;
+	/* 以该元素的位置为参考 */
+	position: relative;
+	top: -22px;
+	/* 优先级 */
+	z-index: 1;
+}
+/* 百度logo */
+#body img{
+	height: 129px;
+	width: 270px;
+	margin-bottom: 11px;
+}
+
+/* #search-div */
+#search-div{
+	height: 44px;
+	width: 656px;
+	/*background-color: #BBBBBB;*/
+}
+/* #search-input */
+#search-input{
+	height: 44px;
+	width: 548px;
+	/*background-color: blueviolet;*/
+	float: left;
+}
+/* #search-input input */
+#search-input input{
+	height: 16px;
+	width: 480px;
+	padding: 12px 48px 12px 16px;
+	border: 2px solid #c4c7ce;
+	border-radius: 10px 0px 0px 10px;
+	border-right: 2px solid #4e6ef2;
+}
+/* #search-input input 鼠标悬停 */
+#search-input input:hover{
+	border-color: #a7aab5;
+	border-right: 2px solid #4e6ef2;
+}
+/* #search-input input 获得焦点 */
+#search-input input:focus{
+	border-color: #4e6ef2;
+	/*去除默认的黑框*/
+	outline: none;
+}
+
+
+/* #search-btn */
+#search-btn{
+	height: 44px;
+	width: 108px;
+	/*background-color: brown;*/
+	float: right;
+}
+/* #search-btn input*/
+#search-btn input{
+	height: 44px;
+	width: 108px;
+	border: 0px;
+	padding: 0px;
+	background-color: #4e6ef2;
+	border-radius: 0 10px 10px 0;
+	line-height: 45px;
+	font-size: 17px;
+	color: #fff;
+	font-weight: 400;
+}
+/* #search-btn input 鼠标悬停 */
+#search-btn input:hover{
+	background-color: #4662d9;
+}
+/*#news*/
+#news{
+	height: 24px;
+	width: 654px;
+	margin-top: 45px;
+	/*background-color: #7FFFD4;*/
+}
+/*#news-search*/
+#news-search{
+	float: left;
+}
+#news-search a{
+	color: #222;
+	text-decoration: none;
+	/*行高和所在标签的高度一致, 垂直居中*/
+	font: 14px/24px Arial,sans-serif;
+}
+
+/*#news-change*/
+#news-change{
+	float: right;
+}
+#news-change a{
+	color: #9195a3;
+	font: 13px/23px Arial,sans-serif;
+	text-decoration: none;
+}
+#news-change a span{
+	font-size: 17px;
+	margin: 0px;
+}
+#news-ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+#news-ul li{
+	float: left;
+	height: 32px;
+	width: 290px;
+	text-align: left;
+}
+#news-ul .aa{
+	margin-right: 59px;
+}
+#news-ul .bb{
+	margin-left: 59px;
+}
+
+#news-ul a{
+	font: 14px/24px Arial,sans-serif;
+	color: rgb(98, 102, 117);
+	line-height: 32px;
+	text-decoration: none;
+}
+
+#news-ul a:hover{
+	color: #4662D9;
+}
+/* 脚 #foot*/
+#foot{
+	height: 10%;
+	/*最小高度*/
+	min-height: 39px;
+	width: 100%;
+	/*最小宽度*/
+	min-width: 1250px;
+	/*background-color: burlywood;*/
+}
+
+#foot-div{
+	height: 39px;
+	/*background-color: #5F9EA0;*/
+	margin-top: 27px;
+	margin-left: 72px;
+	display: inline-block;
+}
+
+#foot-div a,span{
+	display: inline-block;
+	color: #bbb;
+	font-size: 12px;
+	text-decoration: none;
+	font-family: "PingFang SC",Arial,"Microsoft YaHei",sans-serif;
+	margin-right: 15px;
+	margin-top: 11px;
+}
+#foot-div a:hover{
+	color: #222222;
+}
+
+

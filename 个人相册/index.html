@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人相册</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $(".img").click(() => {
+                $(".content-main").fadeOut(1500, () => {
+                    $(".shell").css('display', 'flex').css('opacity', '0').animate({opacity: 1}, 500);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 正方体框架 -->
+    <div class="content-main">
+        <div class="main">
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+        </div>
+    </div>
+
+    <!-- 轮播图框架 -->
+    <div class="shell">
+        <p class="title-main">我的相册</p>
+        <div class="content">
+            <div class="item" onclick="show(this)"><a href="" title="欢乐谷长廊">第一次去欢乐谷地下长廊，看见长廊地下壁纸非常的好看，于是拍了一张照片。</a></div>
+            <div class="item" onclick="show(this)"><a href="" title="欢乐谷打卡地">在欢乐谷打卡地，心型建筑物前拍摄的照片。</a></div>
+            <div class="item" onclick="show(this)"><a href="鹅岭高塔">第一次去鹅岭公园时，进入其中最高的塔和女朋友一起拍摄的照片。</a></div>
+            <div class="item" onclick="show(this)"><a href="摩天轮">第一次去欢乐谷与女朋友一起坐摩天轮时拍摄的照片，然后将照片卡通化后的效果。</a></div>
+            <div class="item" onclick="show(this)"><a href="观音桥">有一次去观音桥的时候，和女朋友一起拍摄的，当时还在吃东西。</a></div>
+            <div class="item" onclick="show(this)"><a href="光环购物中心">上个星期去光环购物中心时，进入其中的公园拍摄的，有点胖了。</a></div>
+        </div>
+        <div class="button">
+            <div class="pre"><svg t="1711537995157" class="icon-pre" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9636" width="48" height="48"><path d="M297.520013 1023.99994a79.946995 79.946995 0 0 1-59.042997-25.938998 86.857995 86.857995 0 0 1 2.133-119.705993l370.296978-368.761979-371.747978-363.299979a86.430995 86.430995 0 0 1-3.242-119.621993 80.202995 80.202995 0 0 1 115.952993-3.497999l433.690975 424.049975c25.596999 25.339999 32.422998 64.843996 16.893999 97.692994a67.403996 67.403996 0 0 0-4.266 7.594 61.089996 61.089996 0 0 1-9.555999 14.504999l-0.256 0.341a16.125999 16.125999 0 0 1-0.853 0.853 29.862998 29.862998 0 0 1-3.072 3.839999l-430.107975 428.315975a80.202995 80.202995 0 0 1-56.823996 23.633999" fill="#757575" p-id="9637"></path></svg></div>
+            <div class="next"><svg t="1711537995157" class="icon-next" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9636" width="48" height="48"><path d="M297.520013 1023.99994a79.946995 79.946995 0 0 1-59.042997-25.938998 86.857995 86.857995 0 0 1 2.133-119.705993l370.296978-368.761979-371.747978-363.299979a86.430995 86.430995 0 0 1-3.242-119.621993 80.202995 80.202995 0 0 1 115.952993-3.497999l433.690975 424.049975c25.596999 25.339999 32.422998 64.843996 16.893999 97.692994a67.403996 67.403996 0 0 0-4.266 7.594 61.089996 61.089996 0 0 1-9.555999 14.504999l-0.256 0.341a16.125999 16.125999 0 0 1-0.853 0.853 29.862998 29.862998 0 0 1-3.072 3.839999l-430.107975 428.315975a80.202995 80.202995 0 0 1-56.823996 23.633999" fill="#757575" p-id="9637"></path></svg></div>
+        </div>
+        <div class="display">
+            <div class="title"></div>
+            <a class="link" target="_blank"><div class="picture"></div></a>
+            <div class="text"></div>
+            <div class="cancel"><svg t="1711612923596" class="icon-cancel" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5237" width="64" height="64"><path d="M86.016 0L2.048 70.656c149.504 111.616 288.768 239.616 411.136 367.616C225.792 627.2 78.848 813.056 1.536 887.808L161.28 1021.44c56.832-117.248 180.224-294.912 345.6-481.28C672.256 727.552 796.16 906.24 852.992 1024c0 0 155.648-165.376 169.472-139.776C962.56 816.64 816.128 620.032 619.52 418.816c112.64-115.712 239.104-230.4 374.272-331.264l-36.864-68.608c-153.088 76.288-299.008 189.44-430.08 309.76C394.752 203.264 245.248 83.968 86.016 0z" p-id="5238"></path></svg></div>
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

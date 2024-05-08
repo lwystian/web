@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(./163756299623163756299625.png);
+        }
+
+        form {
+            width: 300px; /* or whatever width you'd like */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[name="username"], [name="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            animation: name 5s linear 0s infinite;
+        }
+
+        a:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes name {
+            0% {
+                color: red;
+            }
+
+            50% {
+                color: blue;
+            }
+
+            100% {
+                color: darkseagreen;
+            }
+        }
+
+        .test {
+            text-align: center;
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        .demo {
+            text-align: center;
+            margin-top: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h2 class="test">登录</h2>
+        <input name="username" placeholder="用户名输入框" required>
+        <input type="password" name="password" placeholder="密码输入框" required>
+        <button type="submit">登录按钮</button>
+        <div class="demo">
+            <a style="text-decoration: none;" href="">注册账号</a> | <a style="text-decoration: none;" href="">找回密码 </a>
+        </div>
+    </form>
+</body>
+
+</html>

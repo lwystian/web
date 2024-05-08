@@ -1,0 +1,75 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    width: 50vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;     
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+
+.main {
+    perspective: none;
+    width: 300px; /* 正方体的大小 */
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d; /* 保持3D样式 */
+    transform: rotateX(45deg) rotateY(45deg);
+    animation: carousal 5s infinite;
+}
+
+.img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000;
+    background-color: rgba(255, 192, 203, 0.8); 
+    transition: transform 2s ease;
+}
+
+.img:nth-child(1) { transform: rotateY(0deg) translateZ(150px); } /* 前 */
+.img:nth-child(2) { transform: rotateY(90deg) translateZ(150px); } /* 右 */
+.img:nth-child(3) { transform: rotateY(180deg) translateZ(150px); } /* 后 */
+.img:nth-child(4) { transform: rotateY(-90deg) translateZ(150px); } /* 左 */
+.img:nth-child(5) { transform: rotateX(90deg) translateZ(150px); } /* 顶 */
+.img:nth-child(6) { transform: rotateX(-90deg) translateZ(150px); } /* 底 */
+
+.main:hover {
+    .img:nth-child(1) { transform: rotateY(0deg) translateZ(250px); } /* 前 */
+    .img:nth-child(2) { transform: rotateY(90deg) translateZ(250px); } /* 右 */
+    .img:nth-child(3) { transform: rotateY(180deg) translateZ(250px); } /* 后 */
+    .img:nth-child(4) { transform: rotateY(-90deg) translateZ(250px); } /* 左 */
+    .img:nth-child(5) { transform: rotateX(90deg) translateZ(250px); } /* 顶 */
+    .img:nth-child(6) { transform: rotateX(-90deg) translateZ(250px); } /* 底 */
+}
+
+@keyframes carousal {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+
+    25% {
+        transform: rotateY(90deg)  rotateX(90deg);
+    }
+
+    50% {
+        transform: rotateY(180deg)  rotateX(180deg);
+    }
+
+    75% {
+        transform: rotateY(270deg)  rotateX(270deg);
+    }
+
+    100% {
+        transform: rotateY(360deg)  rotateX(360deg);
+    }
+}

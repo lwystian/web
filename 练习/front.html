@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Students</title>
+</head>
+<body>
+    <h1>Fetch Students</h1>
+    <button id="fetchButton">Fetch Students</button>
+    <pre id="studentsList"></pre> <!-- 使用 <pre> 标签以保持 JSON 格式 -->
+
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            fetch('http://localhost:8080/api/students')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('studentsList').textContent = JSON.stringify(data, null, 2); // 直接将 JSON 数据显示在页面上
+            })
+            .catch(error => {
+                console.error('Error fetching students:', error);
+            });
+        });
+    </script>
+</body>
+</html>

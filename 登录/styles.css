@@ -1,0 +1,152 @@
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 渐变色背景，从左下角到右上角颜色渐变 */
+    background: linear-gradient(to right top, hsl(325, 25%, 65%), rgb(158, 179, 213), rgb(120, 180, 210), #b9c69c, #81e8c6);
+}
+
+/* 登录框样式 */
+.login {
+    width: 250px;
+    height: 425px;
+    background: radial-gradient(circle , #555555 , #535353 , #505050 , #4e4e4e , #4c4c4c);
+    border-radius: 10px;
+    padding: 60px 35px 35px 35px;
+    /* 阴影部分，不同方向，不同扩散度，不同透明度和内部与外部的阴影 */
+    box-shadow:
+    0px 20px 20px rgba(0,0,0,0.2),
+    0px 5px 10px rgba(0,0,0,0.2),
+    0px 30px 50px rgba(0,0,0,0.4),
+    30px 50px 50px rgba(0,0,0,0.2),
+    -30px 50px 50px rgba(0,0,0,0.2),
+    inset 20px 0px 60px rgba(0,0,0,0.1),
+    inset -20px 0px 60px rgba(0,0,0,0.1);
+}
+
+/* 阿里字体图标的引用 */
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.ttf?t=1710161426296') format('truetype');
+}
+
+/* 字体图标样式 */
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 30px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* logo位置 */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+/* 标题位置 */
+.title {
+    text-align: center;
+}
+
+/* 副标题位置 */
+.subtitle {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    height: 10px;
+    width: 100%;
+}
+
+/* 输入框位置 */
+.input {
+    position: relative;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: -13px;
+}
+
+/* 输入框样式 */
+.input input {
+    border: none;
+    outline: none;
+    padding: 30px 20px 5px 20px;
+    border-bottom: 1px solid #b3b3b3b3;
+    background: none;
+    width: 90%;
+    color: #fff;
+    font-size: 13px;
+}
+
+/* logo样式 */
+.input .icon-first {
+    position: absolute;
+    bottom: 58px;
+    height: 15px;
+    width: 15px;
+}
+
+/* 次logo样式 */
+.input .icon-second {
+    position: absolute;
+    bottom: 6px;
+    height: 15px;
+    width: 15px;
+}
+
+/* 输入框内部文字样式 */
+input::placeholder {
+    font-family: 'Times New Roman', Times, serif;
+    color: #b38686;
+}
+
+/* 按钮位置 */
+.button {
+    text-align: center;
+    margin: 50px -15px 0px -15px;
+}
+
+/* 按钮样式 */
+.button button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    color: #fff;
+    background: radial-gradient(circle, #24cfaa, #26c5a3, #28bb9c, #29b294 , #2aa88d);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+/* 鼠标靠近样式 */
+.button button:hover {
+    background :radial-gradient(circle, #2fdbb6, #32d6b3, #32c9a8, #36c7a7, #38bb9f);
+}
+
+/* 按钮点击样式 */
+.button button:active {
+    background :radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
+}
+
+/* 忘记密码样式 */
+.forgetpw {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.forgetpw a {
+    text-decoration: none;
+    color: #a89c9c;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.forgetpw a:hover{
+    color: #71c4b2;
+}

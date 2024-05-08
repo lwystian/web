@@ -1,0 +1,514 @@
+/*全局设置,设置与浏览器边距为0 */
+html,body {
+    margin: 0;
+}
+
+/* 头部区域样式 */
+#header {
+    height: 70px;
+    min-width: 1220px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* logo图片样式 */
+.logo img {
+    width: 144px;
+    height: 30px;
+    margin: auto;
+    background-size: 100% 100%;
+    display: inline-block;
+    padding-right: 20px;   
+}
+
+/* logo容器样式 */
+.logo {
+    text-align: center;
+}
+
+/* 头部标题样式 */
+.headertitle {
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 16px;
+    width: 156px;
+    display: block;
+    top: 23px;
+    left: 204px;
+    border-left: 1px solid #b8bdcf;
+    color: #888;
+    text-align: left;
+}
+
+/* 头部右侧区域样式 */
+.header-right {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+
+/* 头部右侧链接样式 */
+.header-right a {
+    text-decoration: none;
+    color: #585e6d;
+    font-size: 12px;
+    padding-right: 12px;
+    
+}
+
+/* 头部右侧分割线样式 */
+.header-right span {
+    padding-right: 12px;
+}
+
+/* 头部右侧竖直分割线样式 */
+.vertical {
+    border-left: 2px solid #b8bdcf;
+    height: 12px;
+    display: inline-block;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+/* 右侧链接容器样式 */
+.link {
+    display: inline-block;
+}
+
+/* 链接悬停效果 */
+.link:hover a{
+    color: #9095a2;
+}
+
+/* 头部最后一个链接样式调整 */
+.header-right .link:last-child a {
+    padding-right: 0;
+}
+
+/* 主题背景图片超链接 */
+.bgi a{
+    position:absolute;
+    width:750px;
+    height:640px;
+    top: 50%;
+    margin-left: 150px;
+    margin-top: -250px;
+    left:0;
+    cursor:pointer;
+}
+
+
+/* 主题背景图片样式 */
+.bgi {
+    background-image: url('https://mail-activity.nosdn.127.net/54d46d33-810a-4f3d-9e14-a8671608feeb');
+    width: 750px;
+    height: 640px;
+    margin-top: -10px;
+    margin-left: 146px;
+    left: 0;
+    cursor: pointer;
+}
+
+/* 全背景图片区域样式 */
+.all-bgi {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: #d8e1ff;
+    
+}
+
+/* 使用兄弟元素关联背景,切换主题时的背景图片样式 */
+#toggleTheme:checked ~ .bgi {
+    background-image: url('https://mail-activity.nosdn.127.net/9f503c82-285b-44d4-87fa-43c3d7fa4096');
+    position: absolute;
+    width: 1220px;
+    top: 9%;
+    left: 9%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    z-index: -1;
+}
+
+/* 使用兄弟元素关联全局背景,切换主题时的全背景图片样式 */
+#toggleTheme:checked ~ .all-bgi {
+    background-image: url(https://mail-activity.nosdn.127.net/fad8bbf2-761d-4564-8104-c8a284f74ed1);
+}
+
+
+/* 登录区域样式 */
+.login {
+    float: right;
+    margin-top: 70px;
+    margin-right: 200px;
+    width: 400px;
+    height: 488px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+/* 登录框初始显示 */
+.content {
+    display: block;
+}
+
+/* 登录框切换隐藏 */
+.newcontent {
+    display: none;
+}
+
+/* 登录框右上角图标样式 */
+.login-icon {
+    width: 72px;
+    height: 72px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQBAMAAAAVaP+LAAAAD1BMVEVHcEw0v3I0wXQzwHI0v3JzQ+LPAAAABHRSTlMAfj/dTUCnlQAAARpJREFUaN7t2NFtwkAQRdF5aYGpIEoHLoHtvyZ+nAjbawO7N5ZXevczoKNBkMmECOeccwOWpZSIKOtqP3t6bJsoKJKCREGRFCQKiqQgUVAcQNUnngLt4YYuDeX+27/4IL6EREHrkdohUdBqpA5IFLQcqQf6+p7LTuivH0MH3aZpQiCVcmdeWlKQKCiSgkRBcdtAjTtbFBSGToWE3UfZfvq9dXt/Du3c3g2QKKh+e7dAoqC4JOQGrf4/oKHNoUtAoqD6lznROBICVf+gRONIDORG/q7y+XelGRIF/Y7UD4mC5pEASBS0XJXROxIBLVZl9I6EQPOqBBK2GZOChO3qpCD9x8FkaCQoKUjYNZIUJOw+8l4ady8555w7qwd9UZnv+8v33QAAAABJRU5ErkJggg==) 50% no-repeat;
+    background-size: 100% 100%;
+    float: right;
+    position: relative;
+}
+
+/* 切换后的登录框右上角图标样式 */
+.login-icon-other {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQBAMAAAAVaP+LAAAAElBMVEVHcEw0v3I0v3E0wXI0wHI0v3KBL86LAAAABXRSTlMAfdw6v6HawsAAAAEESURBVGje7dgxCoNQEIThHb2AzfY29l7CA0T0/ldJk5DKt7s6BB7MX5uPwaigZkoppboO25lpnwJnXM5c+9qGhjPb3IY8Db3a0BZu/p6Bo31EOPl3CiJoTUFjDCUvk06h8K8XJCh6jJAgsCBzFgQWZII6hZwFgQWFk9IQWFA0KQ+BBQWTChBYUHtSBQILak4qQWBBrUk1CCyoMakIgQVdT6pCYEGXk8oQWNDVpDoEFnQx6QYEFvT8XaM7aGRBAwkal3Ov/8rvvK7nr6XZOJP21SiTjunWufXPffH8WxALMmdBYEHmLAi0u91ZEFiQOe27oj6t/jU9BDp9CCillFJKKaV66w3NRSf/CL0BuAAAAABJRU5ErkJggg==) 50% no-repeat;
+    background-size: 95% 95%;
+}
+
+/* 扫码登录提示 */
+.login-icon:hover::after {
+    content: '扫码登录';
+    background-color: #0b8f49;
+    color: #fff;
+    width: 60px;
+    height: 20px;
+    padding: 6px 8px;
+    position: absolute; 
+    top: 0; 
+    right: 100%;
+    font-size: 14px;
+    border-radius: 2px;
+    
+}
+
+/* 扫码登录框右侧三角形 */
+.login-icon:hover::before {
+    content: '';
+    position: absolute;
+    border-top: 6px solid transparent; /* 调整三角形大小 */
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #0b8f49; /* 三角形颜色与方框相同 */
+    right: 90%;
+    top: 14%;
+}
+
+/* 登录标题样式 */
+.title {
+    margin-left: 150px;
+    margin-top: 48px;
+    color: #141414;
+    font-size: 24px;
+    line-height: 32px; 
+}
+
+/* 输入区域样式 */
+.input {
+    width: 320px;
+    height: 46px;
+}
+
+/* 第一个输入框样式 */
+.input-first {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    margin-left: 28px;
+    border-width: 0.8px;
+    border-color: #B7BCC7;
+    border-radius: 6px;
+    margin-right: 80px;
+    padding-left: 16px;
+    margin-top: 18px;
+}
+
+/* 第一个输入框内文字样式 */
+.input-first::placeholder {
+    color: #e2d3d3;
+}    
+
+/* 第二个输入框内文字样式 */
+.input-second::placeholder {
+    color: #e2d3d3;
+}
+
+/* 邮箱后缀样式 */
+.mail {
+    position: absolute;
+    right: 240px;
+    top: 271px;
+}
+
+/* 第二个输入框样式 */
+.input-second {
+    width: 100%;
+    height: 46px;
+    margin-left: 28px;
+    border-width: 0.8px;
+    border-color: #B7BCC7;
+    border-radius: 6px;
+    margin-top: 18px;
+    margin-right: 80px;
+    padding-left: 16px;
+}
+
+/* 密码可见性切换眼睛图标样式 */
+.password-eye {
+    position: absolute;
+    width: 22px;
+    height: 16px;
+    background: url(https://mimg.127.net/p/freemail/index/lib/img/urs/ico-eye-disabled@2x.png) no-repeat center center;  /*背景图片不重复,居于中心*/
+    background-size: 16px 16px;
+    margin-top: -30px;
+    margin-left: 335px;
+}
+
+/* 登录选项区域样式 */
+.two-login {
+    height: 16px;
+    width: 340px;
+    margin-top: 102px;
+    margin-left: 28px;
+}
+
+/* 免登录勾选框样式 */
+.un-login {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-top: -0.1px;
+    margin-left: -0.2px;
+}
+
+/* 免登录文本样式 */
+.un-login-text {
+    position: absolute;
+    font-size: 14px;
+    color: #585E6D;
+    margin-left: 20px;
+    margin-top: -2px;
+}
+
+/* 忘记密码链接样式 */
+.forgetpwd {
+    float: right;
+    color: #585E6D;
+    font-size: 14px;
+    margin-top: -3px;
+    text-decoration: none;
+}
+
+/* 忘记密码链接悬停效果 */
+.forgetpwd:hover {
+    color: #9095A2;
+}
+
+/* 登录按钮样式 */
+.btn button{
+    width: 341px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    background: #299E59;
+    color: #fff;
+    margin-top: 55px;
+    margin-left: 28px;
+}
+
+/* 登录按钮悬停效果 */
+.btn button:hover {
+    background-color: #35905b;
+}
+
+/* 注册链接区域样式 */
+.register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 注册链接样式 */
+.register  a{
+    color: #585e6d;
+    font-size: 14px;
+    line-height: 15px;
+    text-decoration: none;
+    display: inline-block;
+    height: 15px;
+    padding-right: 3px;
+    padding-left: 9px;
+    vertical-align: middle;
+}
+
+/* 注册链接左侧边框样式 */
+.register a:last-child {
+    border-left: 2px solid #c8cbd5;
+}
+
+/* 注册链接悬停效果 *
+.register a:hover {
+    color: #9095A2;
+}
+
+/* 登录底部文本区域样式 */
+.login-bottom {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 登录底部链接样式 */
+.login-bottom a{
+    color: #585e6d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 登录底部链接悬停效果 */
+.login-bottom a:hover {
+    color: red;
+}
+
+/* 登录底部文本样式 */
+.login-bottom span {
+    color: #585e6d;
+    font-size: 14px;
+}
+
+/* 切换登录页面顶部区域样式 */
+.newcontent-top {
+    text-align: center;
+}
+
+/* 切换登录页面新内容顶部文本样式 */
+.newcontent-top span {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 切换登录页面新内容顶部链接样式 */
+.newcontent-top a {
+    text-decoration: none;
+    color: #538ff4;
+}
+
+/* 登录图片样式 */
+.login-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 页面底部样式 */
+#bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 1220px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+/* 底部导航链接样式 */
+.footer-nav {
+    position: absolute;
+    margin-top: -5px;
+    margin-left: 510px;
+}
+
+/* 底部导航链接具体样式 */
+.footer-nav a {
+    display: inline-block;
+    margin-left: 10px;
+    color: #888;
+    font-size: 12px;
+    text-decoration: none;
+    padding-left: 10px;
+    margin-right: -5px;
+}
+
+/* 底部导航链接左侧边框样式 */
+.footer-nav a:not(:first-child) {
+    display: inline-block;
+    border-left: 2px solid #c8cbd5;
+    height: 12px;
+    line-height: 12px;
+}
+
+/* 底部版权信息样式 */
+.footer-nav span {
+    margin-left: 8px;
+    display: inline-block;
+    color: #888;
+    font-size: 12px;
+    border-left: 2px solid #c8cbd5;
+    padding-left: 10px;
+    height: 12px;
+    line-height: 12px;
+}
+
+/* 底部认证链接和文本样式 */
+.footer-certification a,.footer-certification span{
+    color: #888;
+    font-size: 12px;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+/* 底部认证信息区域样式 */
+.footer-certification {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 400px;
+}
+
+/* 上一张主题按钮样式 */
+.prevTheme {
+    position: fixed;
+    height: 24px;
+    width: 24px;
+    left: 2%;
+    top: 48%;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEVHcEwAAAC2trYAAAAAAAAAAAAAAAAAAAAAAAAAAAD///+L7HFaAAAACnRSTlMAZrNdNAokUBJDRzSSTwAAARVJREFUOMt9VDEOwjAMzEDobAJUjKzdOgBig6HMIBASGwjYqXgJQnygY19JE+raTVy8JL3T2Y5rW6na9O2dwmKzVZ4dcnAW3z08BbQPx3uEA6wI1znDwVCcK7Rs3jgCz9DZ2ieGP7wPgZ0dsQ+JmSPSkIjF0Bh+JxHW10siqry0hNvX90WiChLRx2BK9wePnRR0H6kLCcqSJGNWqKQsC5ZWToIiIcmEClKhA5IYxQSODAiHMYniAi7BGDVCkoYo2qfB4mI58IzDTsAHXmRiLP9AW8RIJh5yL9jO0qlIbJWc1kRuRBv7T8OpXOie/03dOQadg9M9ap3D6b0+ZmuDOzMrvhpOhGftZXLEJZP560ffnmCWtJa+MTBhWy+e3+YAAAAASUVORK5CYII=) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 下一张主题按钮样式 */
+.nextTheme {
+    position: fixed;
+    height: 24px;
+    width: 24px;
+    left: 2%;
+    top: 55%;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEVHcEwAAAC2trYAAAAAAAAAAAAAAAAAAAAAAAAAAAD///+L7HFaAAAACnRSTlMAZrNdNAokUBJDRzSSTwAAARpJREFUOMt9VLEOgjAQ7UBxPqoSRle2DmrccNBZozFx04i7xC8xxh9g5Cst2HpHOXhLk/e4Xu9xd0JYyPytYbndCQ/HAhrEd4/X4PChfIA8QIa8LAgPCvPcoIXF/yLw4C5b+8L4x4fQwaURDl1h3gi6K8Rsapd+zwn1XS9OMO+SHF9XH7KCSTLihQefG2Airrww7RrlnmV/RTRrn4kzJC3bpxI2NK2aT6PKFyxjdQMn/Kh/gBE0DcEAFGqSBCg017AkICYFphUGmALRkqjCAGMJMTEtqYnE9mhGbQ94Ey9CalbYCd73hG/EOvdAw4mC6Z7hpu4dg97B6R+13uH0qo/J2qCXqYyuhjPym/YyObkls/HXj8yfoFa4lr6+TmFbjm0njAAAAABJRU5ErkJggg==) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 主题控制器按钮悬停效果 */
+.themeCtrl label:hover {
+    width: 24px;
+    height: 24px;
+    background-color: #b77676;
+    border-radius: 50%;   /*圆角设置为50%可以让背景变为原型,与原按钮相匹配*/
+}

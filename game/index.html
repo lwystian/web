@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小黑子大战坤坤</title>
+    <link rel="icon" href="./images/player.png">
+    <link rel="stylesheet" href="./css/game.css">
+</head>
+<body>
+    <div class="name">小黑子大战坤坤</div>
+    <audio id="myAudio" loop>
+        <source src="./audio/bg.mp3" type="audio/mpeg">
+        您的浏览器不支持自动播放游戏音乐
+    </audio>
+    <audio id="boomAudio">
+        <source src="./audio/boom.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="endAudio">
+        <source src="./audio/boom1.mp3" type="audio/mpeg">
+    </audio>
+    <div class="bg">
+        <div id="player"><img src="./images/player.png" style="width: 50px; height: 50px;"></div>
+        <div id="score"></div>
+        <div id="over"></div>
+    </div>
+    <div class="set">
+        <button class="btn" id="start" disabled>开始 / 重新游戏</button>
+        <button class="btn" id="pause-continue">暂停 / 继续游戏</button>
+        <button class="btn" onclick="setMusic()">音乐：开 / 关</button>
+        <button class="btn" id="drop-btn" onmouseover="showMenu()" onmouseout="hideMenu()">游戏模式</button>
+        <div id="drop" onmouseover="showMenu()" onmouseout="hideMenu()">
+            <button onclick="changemode(this)" id="easy">简单模式</button>
+            <button onclick="changemode(this)" id="normal">正常模式</button>
+        </div>
+    </div>
+    <div class="author"><a href="https://xiaotian.online">Powered by xiaotian</a></div>
+    <script src="./js/game.js"></script>
+    <script>
+        window.onload = function() {
+            alert('游戏资源加载完毕，可以开始游戏')
+            document.getElementById('start').disabled = false 
+        }
+        document.getElementById('start').addEventListener('click', startGame)
+    </script>
+</body>
+</html>

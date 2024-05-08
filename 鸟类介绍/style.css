@@ -1,0 +1,226 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  overflow: hidden;
+  font-family: "light-font";
+}
+
+@font-face {
+  font-family: "light-font";
+  src: url(./font/font.otf);
+}
+
+.shell {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: white;
+  perspective: 2000px;
+  transform-origin: center;
+}
+
+.title-main {
+  position: absolute;
+  top: 50px;
+  color: #000;
+  font-size: 25px;
+  text-shadow: 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: translateZ(-30vw) rotateY(0);
+  animation: carousel 15s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.item {
+  position: absolute;
+  width: 60vw;
+  height: 40vw;
+  max-width: 300px;
+  max-height: 250px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-size: cover;
+  -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%, rgba(255, 255, 255, 0.3));
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+.item:nth-child(1) {
+  background-image: url(./img/1.webp);
+  transform: rotateY(0) translateZ(35vw);
+}
+
+.item:nth-child(2) {
+  background-image: url(./img/2.webp);
+  transform: rotateY(60deg) translateZ(35vw);
+}
+
+.item:nth-child(3) {
+  background-image: url(./img/3.webp);
+  transform: rotateY(120deg) translateZ(35vw);
+}
+
+.item:nth-child(4) {
+  background-image: url(./img/4.webp);
+  transform: rotateY(180deg) translateZ(35vw);
+}
+
+.item:nth-child(5) {
+  background-image: url(./img/5.webp);
+  transform: rotateY(240deg) translateZ(35vw);
+}
+
+.item:nth-child(6) {
+  background-image: url(./img/6.webp);
+  transform: rotateY(300deg) translateZ(35vw);
+}
+
+@keyframes carousel {
+  0% {
+      transform: translateZ(-35vw) rotateY(0deg);
+  }
+  16% {
+      transform: translateZ(-35vw) rotateY(-60deg);
+  }
+  33% {
+      transform: translateZ(-35vw) rotateY(-120deg);
+  }
+  50% {
+      transform: translateZ(-35vw) rotateY(-180deg);
+  }
+  66% {
+      transform: translateZ(-35vw) rotateY(-240deg);
+  }
+  83% {
+      transform: translateZ(-35vw) rotateY(-300deg);
+  }
+  100% {
+      transform: translateZ(-35vw) rotateY(-360deg);
+  }
+}
+
+.no-animation {
+  animation: none;
+}
+
+.button {
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  cursor: pointer;
+}
+
+.icon-pre:hover , .icon-next:hover {
+  background-color: grey;
+}
+
+.icon-pre:active , .icon-next:active {
+  background-color: rgb(72, 72, 72);
+}
+
+.pre {
+  transform: rotate(180deg);
+  margin-left: 40px;
+}
+
+.next {
+  margin-right: 40px;
+}
+
+.display {
+  display: none;
+}
+
+.introduce {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 350px;
+  width: 45vw;
+  height: 90vh;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 20px;
+}
+
+.title {
+  position: absolute;
+  top: 8px;
+  font-weight: bolder;
+  font-size: 18px;
+  color: red;
+}
+
+.picture {
+  position: absolute;
+  top: 40px;
+  left: 76px;
+  width: 35vw;
+  height: 45vh;
+  background-size: cover;
+  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 10%;
+}
+
+.link {
+  width: 150px;
+  height: 150px;
+}
+
+.text {
+  top: 380px;
+  position: absolute;
+  max-width: 40vw;
+  max-height: 34vh;
+  color: #000;
+  overflow: auto;
+}
+
+.cancel {
+  position: absolute;
+  top: 5px;
+  right: 5PX;
+}
+
+.icon-cancel {
+  height: 30px;
+  width: 30px;
+  fill: red;
+}
+
+.icon-cancel:hover {
+  fill: #1ea054;
+}
+
+.icon-cancel:active {
+  fill: #26d16d;
+}
+
+.item a {
+  display: none;
+}

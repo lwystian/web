@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/all.jpg);
+    background-size: contain;
+    font-family: 'game-font';
+}
+
+@font-face {
+    font-family: "game-font";
+    src: url(../fonts/font.ttf);
+}
+
+.bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70vw;
+    height: 90vh;
+    background: url(../images/bg.jpg);
+    background-size: cover;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.obstacle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 20px;
+    height: 85px;
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    height: 53px;
+    left: 35vw;
+    top: 80vh;
+}
+
+.rows {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 13vw;
+    height: 80vh;
+    right: 1vw;
+    top: 10vh;
+}
+
+.btn {
+    width: 8vw;
+    height: 7vh;
+    margin: 7vh 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    font-family: 'game-font';
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: burlywood;
+}
+
+.btn:active {
+    background-color: rgb(156, 133, 105);
+}
+
+#score {
+    z-index: 2;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    width: 18vw;
+    height: 15vh;
+    font-family: 'game-font';
+    font-size: 25px;
+}
+
+.name {
+    position: absolute;
+    left: 6vw;
+    width: 4vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    opacity: 0.7;
+}
+
+.author {
+    position: absolute;
+    bottom: 1vh;
+}
+
+.author a {
+    color: red;
+    text-decoration: none;
+}
+
+.author a:hover {
+    color: #0000ff;
+}
+
+#over {
+    z-index: 2;
+    position: absolute;
+    width: 30vw;
+    height: 14vh;
+    background: url(../images/over.png);
+    background-size: cover;
+    box-shadow: 
+    6px 6px 10px 5px rgba(0, 0, 0 , 0.4);
+    border-radius: 10px;
+    display: none;
+}
+
+#drop {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 73vh;
+}
+
+#drop button {
+    margin: 0;
+    width: 8vw;
+    height: 5vh;
+    border-radius: 10px;
+    font-family: 'game-font';
+}
+
+#drop button:hover {
+    background-color: burlywood;
+}
+
+#drop button:active {
+    background-color: rgb(156, 133, 105);
+}

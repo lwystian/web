@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            list-style: none;
+            margin-left: 10px;
+        }
+        #list li {
+            position: absolute;
+            text-shadow: 0 0 5px #000;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        #list li:nth-child(1){
+            color: tomato;
+        }
+
+        #list li:nth-child(2){
+            color: rgb(42, 222, 18);
+        }
+
+        #list li:nth-child(3){
+            color: rgb(72, 17, 148);
+        }
+
+        #list li:nth-child(4){
+            color: gold;
+        }
+
+        .change {
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        #list li.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="list">
+        <li>会飞的鱼</li>
+        <li>聪明的我</li>
+        <li>愚蠢的思</li>
+        <li>倒霉的狼</li>
+        <!-- <button>替换</button> -->
+    </div>
+    <div class="change">
+        <button class="pre">上一张</button>
+        <button class="next">下一张</button>
+    </div>
+
+    <script>
+        // var arr = ['聪明的我','笨蛋的思'];
+        // var content = document.getElementsByTagName('p');
+        // var getContent = function(count) {
+        //     for(var i = 0 ; i < count ; i++) {
+        //         content[i].textContent = arr[i]
+        //     }
+        // }
+        
+        // var nextButton = document.querySelector('button');
+        // nextButton.addEventListener('click',function() {
+        //     getContent(2);
+        // });
+        var preButton = document.querySelector('.pre');
+        var nextButton = document.querySelector('.next');
+        var content = document.querySelectorAll('#list li');
+        var i = 0;
+        content[i].className = 'active'
+        nextButton.addEventListener('click',function(){
+            content[i].className = ''
+            i = (i + 1) % content.length
+            content[i].className = 'active'
+        });
+
+        preButton.addEventListener('click', function() {
+            content[i].className = ''
+            if(i != 0) {
+                i--;
+            }
+            else {
+                i = 3
+            }
+            content[i].className = 'active'
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- var preButton = document.querySelector('.pre');
+var nextButton = document.querySelector('.next');
+var content = document.querySelectorAll('#list li');
+var i = 0;
+content[i].className = 'active';
+
+nextButton.addEventListener('click', function() {
+    content[i].className = '';
+    i = (i + 1) % content.length; // 使用模运算循环到列表开始
+    content[i].className = 'active';
+});
+
+preButton.addEventListener('click', function() {
+    content[i].className = '';
+    i = (i - 1 + content.length) % content.length; // 在减少时加上长度确保不会出现负数
+    content[i].className = 'active';
+}); -->

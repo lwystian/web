@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页标题 -->
+    <title>126网易免费邮-你的专业电子邮局</title>
+    <!-- 网站图标 -->
+    <link rel="icon" href="https://mail.163.com/favicon.ico"">
+     <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="./126.css">
+    <!-- 引入js文件 -->
+    <script src="./126.js"></script>
+</head>
+<body>
+    <!-- 页面顶部区域 -->
+    <div id="header">
+        <!-- 左上角logo -->
+        <div class="logo">
+            <img src="data:image/png;base64,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" alt="logo">
+        </div>
+        <p class="headertitle">你的专业电子邮局</p>
+        <!-- 顶部右侧部分 -->
+        <div class="header-right">
+            <div class="link">
+                <a href="https://dashi.163.com/?from=mail11&dltype=site&uid=&spm=pos.free_webmail_9c89159b6fde1dc2.loginPage.login126Page.header.nav&session_id=0386D52D-0464-4F9C-BBA1-5C67D57605BC&scene=appTrack&fromDlpro=1">手机App下载</a>
+            </div>
+            <div class="link">
+                <a href="https://dashi.163.com/?from=mail340&dltype=site&scene=appTrack&session_id=0386D52D-0464-4F9C-BBA1-5C67D57605BC&spm=pos.free_webmail_9c89159b6fde1dc2.loginPage.login126Page.header.nav&uid=&fromDlpro=1">电脑客户端下载</a>
+            </div>
+            <div class="link">
+                <a href="https://vipmail.163.com/?from=fmail">VIP</a>
+            </div>
+            <div class="link">
+                <a href="https://v.mail.163.com/?utm_source=126loginnav">会员</a>
+            </div>
+            <div class="link">
+                <a href="https://qiye.163.com/?from=M126_LOGIN">企业邮箱</a>
+            </div>
+            <div class="link">
+                <a href="https://hw.mail.163.com/#126">海外登录</a>
+            </div>
+            <span class="vertical"></span>
+            <div class="link">
+                <a href="https://help.mail.163.com/">帮助</a>
+            </div>
+            <div class="link">
+                <a href="https://www.126.com/html/feedback/#/45">反馈</a>
+            </div>
+            <div class="link">
+                <a href="https://mail.163.com/html/accounts-repair/index.html#/taskPublicity">修复公示</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录框 -->
+    <div class="login">
+        <!-- 登录右上角图标 -->
+        <div id="myElement" class="login-icon"></div>
+        <div class="content">
+            <h2 class="title">账号登录</h2>
+            <!-- 两个输入框 -->
+            <div class="input">
+                <input type="text" placeholder="邮箱账号或手机号码" class="input-first">
+                <span class="mail">@126.com</span>
+                <input type="password" placeholder="输入密码" class="input-second">
+                <div class="password-eye"></div>
+            </div>
+
+            <!-- 免登录和忘记密码部分 -->
+            <div class="two-login">
+                <span>
+                    <input type="checkbox" class="un-login">
+                </span>
+                <label for="un-login" class="un-login-text">30天内免登录</label>
+                <a class="forgetpwd" href="https://id.163.com/mail/retrievepassword" target="_blank">忘记密码</a>
+            </div>
+            <!-- 登录按钮 -->
+            <div class="btn">
+                <button>登&nbsp;&nbsp;录</button>
+            </div>
+            <!-- 注册账号和VIP -->
+            <div class="register">
+                <a href="https://mail.163.com/register/index.htm?from=126mail&utm_source=126mail#/">注册新账号</a>
+                <a href="https://reg1.vip.163.com/newReg1/open?utm_source=webmail_reg_vip&id=v200">注册VIP</a>
+            </div>
+            <!-- 登录框底部服务条款 -->
+            <div class="login-bottom">
+                <span>阅读并接受<a href="https://reg.163.com/agreement_wap.shtml?v=20171127" target="_blank">《服务条款》</a>和<a href="https://mail.163.com/html/agreement/doc.html" target="_blank">《隐私政策》</a></span>
+            </div>
+        </div>
+
+        <!-- 这个是点击右上角图标切换扫码登录的新登录框界面 -->
+        <div class="newcontent">
+            <h2 class="title">扫码登录</h2>
+            <div class="newcontent-top">
+                <span>请打开 <a href="https://dashi.163.com/?from=mail23&spm=pos.free_webmail_9c89159b6fde1dc2.loginPage.login126Page.qrcodePanel.link&scene=appTrack&session_id=EDE36891-A376-401C-8DFC-661F2BF2A461&t=1709968046169&fromDlpro=1">网易邮箱大师App</a> 扫一扫登录</span>
+            </div>
+            <div class="login-image">
+                <img width="180px" height="180px" src="./login.png" alt="登录图片">
+            </div>
+            <div class="register">
+                <a href="https://mail.163.com/register/index.htm?from=126mail&utm_source=126mail#/">密码登录</a>
+                <a href="https://reg1.vip.163.com/newReg1/open?utm_source=webmail_reg_vip&id=v200">注册新账号</a>
+            </div>
+            <div class="login-bottom">
+                <span>阅读并接受<a href="https://reg.163.com/agreement_wap.shtml?v=20171127" target="_blank">《服务条款》</a>和<a href="https://mail.163.com/html/agreement/doc.html" target="_blank">《隐私政策》</a></span>
+            </div>
+        </div>
+    </div>
+    <!-- 底部备案及其他内容 -->
+    <div id="bottom">
+        <div class="footer-nav">
+            <a data-tj-name="b_bottom_ntes_index_click" rel="noopener norefferrer" href="https://www.163.com/" target="_blank">网易首页</a> 
+            <a data-tj-name="b_bottom_yanxuan_index_click" rel="noopener norefferrer" href="https://you.163.com/" target="_blank">网易严选</a> 
+            <a data-tj-name="b_bottom_government_num_click" rel="noopener norefferrer" href="https://help.mail.163.com/faqDetail.do?code=d7a5dc8471cd0c0e8b4b8f4f8e49998b374173cfe9171305fa1ce630d7f67ac2842e8b50ff6a4ebb" target="_blank">政府公益热线</a>
+            <span class="copyright">网易公司版权所有©1997-<script src="https://mimg.127.net/copyright/year.js?rnd=1578362533107"></script>2024</span>
+        </div>
+
+        <div class="footer-certification">
+            <a href="http://beian.miit.gov.cn/" target="_blank" class="icp">&nbsp;&nbsp;&nbsp;ICP备案 粤B2-20090191-13</a>
+            <span class="copyright">
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602000311" rel="noopener norefferrer" target="_blank"><img src="https://mimg.127.net/p/images/logo/gonganlogo.png" alt="公安" style="position: relative;top: 4px;vertical-align: baseline;"> 粤公网安备 44010602000311 </a>
+            </span>
+            <span class="copyright">
+            <span>增值电信业务许可证</span> 
+                <a class="link" href="http://cms-bucket.ws.126.net/2023/0411/ff0d482fp00rsxgwr00o8c000un017cc.png" target="_blank">粤B2-20090191</a> 
+                <a class="link" href="http://cms-bucket.ws.126.net/2023/0411/0fce264aj00rsxgy9002kc000sc00jrc.jpg" target="_blank">&nbsp;B2-20090058</a>
+            </span>
+        </div>
+    </div>
+    <!-- 左侧中部的背景切换按钮 -->
+    <div class="themeCtrl">
+        <!-- 使用checkbox进行状态切换,并使用兄弟选择器进行背景的同步切换 -->
+        <input type="checkbox" id="toggleTheme" hidden />
+        <label for="toggleTheme" class="prevTheme" title="上一张"></label>
+        <label for="toggleTheme" class="nextTheme" title="下一张"></label>
+        <!-- 这里是初始背景样式以及颜色设定 -->
+        <div class="all-bgi"></div>
+        <!-- 初始背景 -->
+        <div class="bgi">
+            <a href="http://r.mail.163.com/r.jsp?url=http%3A%2F%2Fqiye.163.com%2F%3Ffrom%3DM126_163_LOGIN_banner&amp;sign=1052924428&amp;_r_ignore_statId=1_900_165_472&amp;position=1&amp;_r_ignore_moduleId=900&amp;spm=ad.0.0.0.900.472&amp;_r_ignore_uid=nt%40126.com&amp;uid=nt%40126.com&amp;session_id=e94466a2-f8f6-4c91-a78d-60c2919d3b07" hidefocus="true" target="_blank"></a>
+        </div>
+    </div>
+    
+    
+
+</body>
+</html>

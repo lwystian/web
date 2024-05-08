@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            background-color: red;
+            z-index: 2;
+        }
+
+        .style {
+            width: 300px;
+            height: 300px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQBAMAAAAVaP+LAAAAD1BMVEVHcEw0v3I0wXQzwHI0v3JzQ+LPAAAABHRSTlMAfj/dTUCnlQAAARpJREFUaN7t2NFtwkAQRdF5aYGpIEoHLoHtvyZ+nAjbawO7N5ZXevczoKNBkMmECOeccwOWpZSIKOtqP3t6bJsoKJKCREGRFCQKiqQgUVAcQNUnngLt4YYuDeX+27/4IL6EREHrkdohUdBqpA5IFLQcqQf6+p7LTuivH0MH3aZpQiCVcmdeWlKQKCiSgkRBcdtAjTtbFBSGToWE3UfZfvq9dXt/Du3c3g2QKKh+e7dAoqC4JOQGrf4/oKHNoUtAoqD6lznROBICVf+gRONIDORG/q7y+XelGRIF/Y7UD4mC5pEASBS0XJXROxIBLVZl9I6EQPOqBBK2GZOChO3qpCD9x8FkaCQoKUjYNZIUJOw+8l4ady8555w7qwd9UZnv+8v33QAAAABJRU5ErkJggg==);
+            z-index: -1;
+        }
+
+        .style1 {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQBAMAAAAVaP+LAAAAElBMVEVHcEw0v3I0v3E0wXI0wHI0v3KBL86LAAAABXRSTlMAfdw6v6HawsAAAAEESURBVGje7dgxCoNQEIThHb2AzfY29l7CA0T0/ldJk5DKt7s6BB7MX5uPwaigZkoppboO25lpnwJnXM5c+9qGhjPb3IY8Db3a0BZu/p6Bo31EOPl3CiJoTUFjDCUvk06h8K8XJCh6jJAgsCBzFgQWZII6hZwFgQWFk9IQWFA0KQ+BBQWTChBYUHtSBQILak4qQWBBrUk1CCyoMakIgQVdT6pCYEGXk8oQWNDVpDoEFnQx6QYEFvT8XaM7aGRBAwkal3Ov/8rvvK7nr6XZOJP21SiTjunWufXPffH8WxALMmdBYEHmLAi0u91ZEFiQOe27oj6t/jU9BDp9CCillFJKKaV66w3NRSf/CL0BuAAAAABJRU5ErkJggg==);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="myElement"  class="style">
+    </div>
+
+    <script>
+        var element = document.getElementById('myElement');
+element.addEventListener('click', function() {
+    this.classList.toggle('style1');
+});
+
+
+    </script>
+    
+</body>
+</html>

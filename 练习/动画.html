@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 页面布局使用flex布局，并使其内容居中 */
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            padding: 20px;
+            font-size: 50px;
+            width: 200px;
+            height: 80px;
+            text-decoration: none;
+            animation: name 3s linear 0s infinite;
+        }
+
+        a:hover {
+            background: black;
+            /* 可选：悬停时停止动画 */
+            animation-play-state: paused;
+        }
+
+        @keyframes name {
+            0% {
+                color: red;
+            }
+            50% {
+                color: blue;
+            }
+            100% {
+                color: darkseagreen;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="s1"><a href="#">动画变换</a></div>
+</body>
+</html>
